@@ -19,9 +19,9 @@
        in Plone -->
   <genericsetup:registerProfile
       name="default"
-      title="All the custom content types for misitio website"
+      title="misitio.contenttypes: All custom content types for misitio website"
       directory="profiles/default"
-      description="Extension profile for All the custom content types for misitio website"
+      description="Extension profile for all custom content types for misitio website"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
