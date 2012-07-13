@@ -1,28 +1,32 @@
 <model xmlns="http://namespaces.plone.org/supermodel/schema">
   <schema>
-    <field name="nombre" type="zope.schema.TextLine">
-      <description>Nombre</description>
-      <title>Nombre</title>
+    <field name="nombres" type="zope.schema.TextLine">
+      <description>Nombres del miembro</description>
+      <title>Nombres</title>
     </field>
-    <field name="apellido" type="zope.schema.TextLine">
-      <description>Apellido</description>
-      <title>Apellido</title>
+    <field name="apellidos" type="zope.schema.TextLine">
+      <description>Apellidos del miembro</description>
+      <title>Apellidos</title>
     </field>
-    <field name="cedula_de_indentidad" type="zope.schema.TextLine">
-      <description>C&#233;dula de indentidad</description>
-      <title>cedula de indentidad</title>
+    <field name="cedula" type="zope.schema.TextLine">
+      <description>C&#233;dula de identidad</description>
+      <title>C&#233;dula</title>
     </field>
     <field name="direcci_n_f_sica" type="zope.schema.TextLine">
-      <description>Direcci&#243;n Fisica</description>
-      <title>Direcci&#243;n F&#237;sica</title>
+      <description>Direcci&#243;n f&#237;sica del miembro</description>
+      <title>Direcci&#243;n f&#237;sica</title>
     </field>
-    <field name="direccion_electronica" type="zope.schema.TextLine">
-      <description>Direcci&#243;n Electr&#243;nica</description>
-      <title>Direccion Electronica</title>
+    <field name="pagina_web" type="zope.schema.TextLine">
+      <description>Pagina Web del miembro</description>
+      <title>Pagina Web</title>
     </field>
     <field name="twitter" type="zope.schema.TextLine">
-      <description>Twitter</description>
+      <description>Cuenta Twitter</description>
       <title>Twitter</title>
+    </field>
+    <field name="fotografia" type="plone.namedfile.field.NamedBlobImage">
+      <description>Fotograf&#237;a del miembro</description>
+      <title>Fotograf&#237;a</title>
     </field>
   </schema>
 </model>
