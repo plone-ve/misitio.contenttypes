@@ -13,10 +13,11 @@
  <property name="global_allow">True</property>
  <property name="filter_content_types">true</property>
  <property name="allowed_content_types">
- <element value="file" />
- <element value="image" />
- <element value="link" />
- <element value="miembro" /></property>
+  <element value="File" />
+  <element value="Image" />
+  <element value="Link" />
+  <element value="miembro" />
+ </property>
  <property name="allow_discussion">False</property>
  <property name="default_view">view</property>
  <property name="view_methods">
