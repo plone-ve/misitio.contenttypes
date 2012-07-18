@@ -12,7 +12,7 @@
       <description>C&#233;dula de identidad</description>
       <title>C&#233;dula</title>
     </field>
-    <field name="direcci_n_f_sica" type="zope.schema.TextLine">
+    <field name="direccion_fisica" type="zope.schema.TextLine">
       <description>Direcci&#243;n f&#237;sica del miembro</description>
       <title>Direcci&#243;n f&#237;sica</title>
     </field>
