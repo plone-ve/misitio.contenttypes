@@ -1,14 +1,11 @@
 <?xml version="1.0"?>
-<object name="consejo_comunal" meta_type="Dexterity FTI" i18n:domain="plone"
+<object name="misitio.contenttypes.consejo_comunal" meta_type="Dexterity FTI" i18n:domain="plone"
    xmlns:i18n="http://xml.zope.org/namespaces/i18n">
    
+ <!-- Basic metadata -->
  <property name="title" i18n:translate="">Consejo Comunal</property>
  <property name="description" i18n:translate="">Permite ingresar la información de los consejos comunales</property>
  <property name="icon_expr">string:${portal_url}/folder_icon.png</property>
- <property name="factory">consejo_comunal</property>
- <property
-    name="add_view_expr">string:${folder_url}/++add++consejo_comunal</property>
- <property name="link_target"></property>
  <property name="immediate_view">view</property>
  <property name="global_allow">True</property>
  <property name="filter_content_types">true</property>
@@ -16,27 +13,42 @@
   <element value="File" />
   <element value="Image" />
   <element value="Link" />
-  <element value="miembro" />
+  <element value="misitio.contenttypes.miembro" />
  </property>
  <property name="allow_discussion">False</property>
+ 
+ <!-- View information -->
  <property name="default_view">view</property>
  <property name="view_methods">
   <element value="view"/>
  </property>
  <property name="default_view_fallback">False</property>
+ 
+ <!-- add permission -->
  <property name="add_permission">cmf.AddPortalContent</property>
+ 
+ <!-- class used for content items -->
  <property name="klass">plone.dexterity.content.Container</property>
+ 
+ <!-- enabled behaviors -->
  <property name="behaviors">
   <element value="plone.app.dexterity.behaviors.metadata.IDublinCore"/>
   <element value="plone.app.content.interfaces.INameFromTitle"/>
  </property>
- <property name="schema"></property>
 
+ <!-- schema interface -->
+ <property name="schema">misitio.contenttypes.consejo_comunal.IConsejoComunal</property>
+<!--
  <property name="model_file">misitio.contenttypes:models/consejo_comunal.xml</property>
+-->
+
+ <!-- Method aliases -->
  <alias from="(Default)" to="(dynamic view)"/>
  <alias from="edit" to="@@edit"/>
  <alias from="sharing" to="@@sharing"/>
  <alias from="view" to="(selected layout)"/>
+ 
+ <!-- Actions -->
  <action title="View" action_id="view" category="object" condition_expr=""
     icon_expr="" link_target="" url_expr="string:${object_url}"
     visible="True">
@@ -47,4 +59,5 @@
     visible="True">
   <permission value="Modify portal content"/>
  </action>
+ 
 </object>

@@ -28,6 +28,7 @@ setup(name='misitio.contenttypes',
           'setuptools',
           'plone.app.dexterity',
           'plone.namedfile [blobs]',
+          'plone.formwidget.namedfile',
           # -*- Extra requirements: -*-
       ],
       extras_require={
