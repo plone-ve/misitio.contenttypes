@@ -21,11 +21,13 @@
  <property name="add_permission">cmf.AddPortalContent</property>
 
  <!-- class used for content items -->
+ <!--
  <property name="klass">plone.dexterity.content.Item</property>
+ -->
+ <property name="klass">misitio.contenttypes.miembro.Miembro</property>
  
  <!-- enabled behaviors -->
  <property name="behaviors">
-  <element value="plone.app.dexterity.behaviors.metadata.IDublinCore"/>
   <element value="plone.app.content.interfaces.INameFromTitle"/>
  </property>
  

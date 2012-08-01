@@ -1,0 +1,52 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="misitio.contenttypes">
+<body>
+
+<metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main">
+
+        <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+        <h1 class="documentFirstHeading" tal:content="context/title" />
+
+        <div tal:replace="structure provider:plone.belowcontenttitle" />
+
+        <p class="documentDescription" tal:content="context/description" />
+                          
+        <div class="info_general">
+            <b>Cédula:</b> <span tal:content="context/cedula" /> <br />
+            <b>Nombres:</b> <span tal:content="context/nombres" /> <br />
+            <b>Apellidos:</b> <span tal:content="context/apellidos" /> <br />
+            <b>Dirección física:</b> <span tal:content="context/direccion_fisica" /> <br />
+            <tal:paginaweb condition="context/pagina_web">
+            <b>Pagina Web:</b> <a href="#"
+                                  tal:attributes="href context/pagina_web"
+                                  tal:content="context/pagina_web">enlace pagina web</a> <br />
+            </tal:paginaweb>
+            <tal:twitter condition="context/twitter">
+            <b>Twitter:</b> <a href="#"
+                               tal:define="url_twitter string:https://twitter.com/${context/twitter};"
+                               tal:attributes="href url_twitter"
+                               tal:content="url_twitter">enlace Twitter</a> <br />
+            </tal:twitter>
+            <!--
+        <div class="miembroImageContainer" tal:define="image context/getFotografia" tal:condition="image">
+               <img tal:replace="structure python: image.tag(scale='thumb', css_class='tileImage')" src="" alt="" />
+        </div>
+            -->
+        </div>
+
+        <div tal:replace="structure provider:plone.abovecontentbody" />
+        
+        <div tal:replace="structure provider:plone.belowcontentbody" />
+
+    </tal:main-macro>
+</metal:main>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="misitio.contenttypes">
+<body>
+
+<metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main"
+                    tal:define="miembros_cc view/miembros_consejo_comunal">
+
+        <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+        <h1 class="documentFirstHeading" tal:content="context/title" />
+
+        <div tal:replace="structure provider:plone.belowcontenttitle" />
+
+        <p class="documentDescription" tal:content="context/description" />
+
+        <div class="info_general">
+            <b>Ubicación:</b> <span tal:content="context/ubicacion" /> <br />
+            <b>Persona de contacto:</b> <span tal:content="context/contacto" /> <br />
+            <b>Teléfono de contacto:</b> <span tal:content="context/telefono" /> <br />
+            <b>Correo electrónico de contacto:</b> <span tal:content="context/correo" /> <br />
+        </div>
+        <br />
+        <div tal:replace="structure provider:plone.abovecontentbody" />
+        
+        <tal:notmiembros condition="not:miembros_cc">
+            <h2 i18n:translate="heading_not_miembros_consejo_comunal">No hay miembros registrados en el consejo comunal</h2>
+        </tal:notmiembros>
+
+        <tal:miembros condition="miembros_cc">
+            <h2 i18n:translate="heading_miembros_consejo_comunal">Miembros del consejo comunal</h2>
+            <dl>
+                <tal:block repeat="miembro miembros_cc">
+                <dt>
+                    <a tal:attributes="href miembro/getURL"
+                       tal:content="miembro/Title" />
+                </dt>
+                <dd tal:content="miembro/Description" />
+                </tal:block>
+            </dl>
+        </tal:miembros>
+
+        <div tal:replace="structure provider:plone.belowcontentbody" />
+
+    </tal:main-macro>
+</metal:main>
+
+</body>
+</html>

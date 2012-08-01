@@ -26,5 +26,10 @@
       />
 
   <!-- -*- extra stuff goes here -*- -->
+  
+  <adapter for="misitio.contenttypes.miembro.IMiembro"
+      provides="misitio.contenttypes.miembro.INameFromMiembroNames"
+      factory="misitio.contenttypes.miembro.NameFromMiembroNames"
+      />
 
 </configure>
