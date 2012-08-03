@@ -5,7 +5,7 @@
  <!-- Basic metadata -->
  <property name="title" i18n:translate="">Consejo Comunal</property>
  <property name="description" i18n:translate="">Permite ingresar la información de los consejos comunales</property>
- <property name="icon_expr">string:${portal_url}/folder_icon.png</property>
+ <property name="content_icon">++resource++misitio.contenttypes/registry.gif</property>
  <property name="immediate_view">view</property>
  <property name="global_allow">True</property>
  <property name="filter_content_types">true</property>
